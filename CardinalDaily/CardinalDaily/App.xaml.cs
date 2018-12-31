@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Autofac;
+using CardinalDaily.Views.ContentPages;
+using System;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
@@ -7,11 +9,13 @@ namespace CardinalDaily
 {
     public partial class App : Application
     {
+        public static IContainer Container { get; set; }
+
         public App()
         {
             InitializeComponent();
-
-            MainPage = new MainPage();
+            Container = AutoFacContainerBuilder.CreateContainer();
+            MainPage = new InitialView();
         }
 
         protected override void OnStart()
