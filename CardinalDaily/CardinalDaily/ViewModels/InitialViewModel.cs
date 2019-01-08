@@ -24,8 +24,8 @@ namespace CardinalDaily.ViewModels
             WeekCalendarTest.Wednesday = new Day(true);
             WeekCalendarTest.Thursday = new Day(false);
             WeekCalendarTest.Friday = new Day(true);
-            WeekCalendarTest.Saturday = new Day(true);
-            //RaisePropertyChanged(() => WeekCalendarTest);
+            WeekCalendarTest.Saturday = new Day();
+
             YearCalendarTest = new List<Week>();
             YearCalendarTest.Add(WeekCalendarTest);
             for(int i = 0; i < 52; ++i)

@@ -1,25 +1,99 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <Application xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:controls="clr-namespace:CardinalDaily.Controls"
              x:Class="CardinalDaily.App">
     <Application.Resources>
         <ResourceDictionary>
+            <!-- Dark/Black Background -->
+            <Color x:Key="CardinalRedColor">#BA514B</Color>
+            <Color x:Key="CardinalRedDarkColor">#BA514B</Color>
+            <Color x:Key="CardinalRedLightColor">#7D4140</Color>
+            <Color x:Key="CardinalBackgroundColor">#404040</Color>
+            <Color x:Key="CardinalBackgroundLightColor">#343434</Color>
 
-                <!-- Dark/Black Background -->
-                <Color x:Key="CardinalRedColor">#BA514B</Color>
-                <Color x:Key="CardinalRedDarkColor">#BA514B</Color>
-                <Color x:Key="CardinalRedLightColor">#7D4140</Color>
-                <Color x:Key="CardinalBackgroundColor">#404040</Color>
-                <Color x:Key="CardinalBackgroundLightColor">#343434</Color>
+            <!-- Lighter Grey/Tan Background -->
+            <!--<Color x:Key="CardinalRedColor">#CC0000</Color>
+            <Color x:Key="CardinalRedDarkColor">#930000</Color>
+            <Color x:Key="CardinalRedLightColor">#FF4F30</Color>
+            <Color x:Key="CardinalBackgroundColor">#E1E2E1</Color>
+            <Color x:Key="CardinalBackgroundLightColor">#F5F5F6</Color>-->
 
-                <!-- Lighter Grey/Tan Background -->
-                <!--<Color x:Key="CardinalRedColor">#CC0000</Color>
-                <Color x:Key="CardinalRedDarkColor">#930000</Color>
-                <Color x:Key="CardinalRedLightColor">#FF4F30</Color>
-                <Color x:Key="CardinalBackgroundColor">#E1E2E1</Color>
-                <Color x:Key="CardinalBackgroundLightColor">#F5F5F6</Color>-->
-
-                <Color x:Key="TransparentColor">#FFFFFF00</Color>
+            <Color x:Key="CardinalTransparentColor">#00000000</Color>
+        
+            <Color x:Key="PositiveBackgroundColor">#3CB371</Color>
+            <Color x:Key="NegativeBackgroundColor">#7D4140</Color>
+            
+            <!-- Grid Defaults -->
+            <Style TargetType="{x:Type Grid}">
+                <Setter Property="RowSpacing"
+                        Value="0"/>
+                <Setter Property="ColumnSpacing"
+                        Value="0"/>
+                <Setter Property="Padding"
+                        Value="0"/>
+                <Setter Property="Margin"
+                        Value="0"/>
+            </Style>
+            
+            <!-- BoxView Defaults -->
+            <Style TargetType="{x:Type BoxView}">
+                <Setter Property="BackgroundColor"
+                        Value="{StaticResource CardinalTransparentColor}"/>
+            </Style>
+            
+            <!-- ContentPage Defaults -->
+            <Style TargetType="{x:Type ContentPage}">
+                <Setter Property="BackgroundColor"
+                        Value="{StaticResource CardinalBackgroundColor}"/>
+            </Style>
+            
+            <!-- Font Sizes [H1-H9] -->
+            <controls:OnCustomPlatform x:Key="H9"
+                        x:TypeArguments="x:Double"
+                        iOS="9"
+                        Android="10"
+                        UWP="10"/>
+            <controls:OnCustomPlatform x:Key="H8"
+                        x:TypeArguments="x:Double"
+                        iOS="11"
+                        Android="12"
+                        UWP="12"/>
+            <controls:OnCustomPlatform x:Key="H7"
+                        x:TypeArguments="x:Double"
+                        iOS="12"
+                        Android="14"
+                        UWP="14"/>
+            <controls:OnCustomPlatform x:Key="H6"
+                        x:TypeArguments="x:Double"
+                        iOS="14"
+                        Android="16"
+                        UWP="16"/>
+            <controls:OnCustomPlatform x:Key="H5"
+                        x:TypeArguments="x:Double"
+                        iOS="16"
+                        Android="18"
+                        UWP="18"/>
+            <controls:OnCustomPlatform x:Key="H4"
+                        x:TypeArguments="x:Double"
+                        iOS="18"
+                        Android="20"
+                        UWP="20"/>
+            <controls:OnCustomPlatform x:Key="H3"
+                        x:TypeArguments="x:Double"
+                        iOS="20"
+                        Android="24"
+                        UWP="24"/>
+            <controls:OnCustomPlatform x:Key="H2"
+                      x:TypeArguments="x:Double"
+                      iOS="24"
+                      Android="32"
+                      UWP="32"/>
+            <controls:OnCustomPlatform x:Key="H1"
+                        x:TypeArguments="x:Double"
+                        iOS="32"
+                        Android="48"
+                        UWP="48"/>
         </ResourceDictionary>
     </Application.Resources>
 </Application>

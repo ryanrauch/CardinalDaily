@@ -2,15 +2,16 @@
 <local:InitialViewBase xmlns="http://xamarin.com/schemas/2014/forms"
                        xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
                        xmlns:local="clr-namespace:CardinalDaily.Views.ContentPages"
-                       xmlns:contentViews="clr-namespace:CardinalDaily.Views.ContentViews"
+                       xmlns:converters="clr-namespace:CardinalDaily.Converters"
                        xmlns:controls="clr-namespace:CardinalDaily.Controls"
-                       x:Name="InitialViewName"
-                       x:Class="CardinalDaily.Views.ContentPages.InitialView">
+                       x:Class="CardinalDaily.Views.ContentPages.InitialView"
+                       BackgroundColor="{StaticResource CardinalBackgroundColor}">
     <ContentPage.Content>
-        <ScrollView>
+        <ScrollView Margin="40,40,10,10">
             <controls:WrapLayout ItemsSource="{Binding YearCalendarTest}"
-                         ColumnSpacing="10"
-                         RowSpacing="10">
+                                 ColumnSpacing="3"
+                                 RowSpacing="5"
+                                 BackgroundColor="{StaticResource CardinalBackgroundColor}">
                 <controls:WrapLayout.ItemTemplate>
                     <DataTemplate>
                         <Grid>
@@ -23,13 +24,63 @@
                                 <RowDefinition Height="*"/>
                                 <RowDefinition Height="*"/>                
                             </Grid.RowDefinitions>
-                            <Label Grid.Row="0" Text="{Binding Sunday.Value}"/>
-                            <Label Grid.Row="1" Text="{Binding Monday.Value}"/>
-                            <Label Grid.Row="2" Text="{Binding Tuesday.Value}"/>
-                            <Label Grid.Row="3" Text="{Binding Wednesday.Value}"/>
-                            <Label Grid.Row="4" Text="{Binding Thursday.Value}"/>
-                            <Label Grid.Row="5" Text="{Binding Friday.Value}"/>
-                            <Label Grid.Row="6" Text="{Binding Saturday.Value}"/>
+                            <BoxView Grid.Row="0" 
+                                     Color="{Binding Sunday, Converter={converters:DayToColorConverter}}"
+                                     CornerRadius="3"
+                                     WidthRequest="20"
+                                     HeightRequest="20"
+                                     VerticalOptions="Center"
+                                     HorizontalOptions="Center" />
+                            <BoxView Grid.Row="1" 
+                                     Color="{Binding Monday, Converter={converters:DayToColorConverter}}"
+                                     CornerRadius="3"
+                                     WidthRequest="20"
+                                     HeightRequest="20"
+                                     VerticalOptions="Center"
+                                     HorizontalOptions="Center" />
+                            <BoxView Grid.Row="2" 
+                                     Color="{Binding Tuesday, Converter={converters:DayToColorConverter}}"
+                                     CornerRadius="3"
+                                     WidthRequest="20"
+                                     HeightRequest="20"
+                                     VerticalOptions="Center"
+                                     HorizontalOptions="Center" />
+                            <BoxView Grid.Row="3" 
+                                     Color="{Binding Wednesday, Converter={converters:DayToColorConverter}}"
+                                     CornerRadius="3"
+                                     WidthRequest="20"
+                                     HeightRequest="20"
+                                     VerticalOptions="Center"
+                                     HorizontalOptions="Center" />
+                            <BoxView Grid.Row="4" 
+                                     Color="{Binding Thursday, Converter={converters:DayToColorConverter}}"
+                                     CornerRadius="3"
+                                     WidthRequest="20"
+                                     HeightRequest="20"
+                                     VerticalOptions="Center"
+                                     HorizontalOptions="Center" />
+                            <BoxView Grid.Row="5" 
+                                     Color="{Binding Friday, Converter={converters:DayToColorConverter}}"
+                                     CornerRadius="3"
+                                     WidthRequest="20"
+                                     HeightRequest="20"
+                                     VerticalOptions="Center"
+                                     HorizontalOptions="Center" />
+                            <BoxView Grid.Row="6" 
+                                     Color="{Binding Saturday, Converter={converters:DayToColorConverter}}"
+                                     CornerRadius="3"
+                                     WidthRequest="20"
+                                     HeightRequest="20"
+                                     VerticalOptions="Center"
+                                     HorizontalOptions="Center" />
+                            
+                            <Label Grid.Row="0" Text="{Binding Sunday.DisplayShort}" VerticalTextAlignment="Center" HorizontalTextAlignment="Center"/>
+                            <Label Grid.Row="1" Text="{Binding Monday.DisplayShort}" VerticalTextAlignment="Center" HorizontalTextAlignment="Center"/>
+                            <Label Grid.Row="2" Text="{Binding Tuesday.DisplayShort}" VerticalTextAlignment="Center" HorizontalTextAlignment="Center"/>
+                            <Label Grid.Row="3" Text="{Binding Wednesday.DisplayShort}" VerticalTextAlignment="Center" HorizontalTextAlignment="Center"/>
+                            <Label Grid.Row="4" Text="{Binding Thursday.DisplayShort}" VerticalTextAlignment="Center" HorizontalTextAlignment="Center"/>
+                            <Label Grid.Row="5" Text="{Binding Friday.DisplayShort}" VerticalTextAlignment="Center" HorizontalTextAlignment="Center"/>
+                            <Label Grid.Row="6" Text="{Binding Saturday.DisplayShort}" VerticalTextAlignment="Center" HorizontalTextAlignment="Center"/>
                         </Grid>
                     </DataTemplate>
                 </controls:WrapLayout.ItemTemplate>
