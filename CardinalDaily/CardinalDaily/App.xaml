@@ -1,8 +1,25 @@
-﻿<?xml version="1.0" encoding="utf-8" ?>
+<?xml version="1.0" encoding="utf-8" ?>
 <Application xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="CardinalDaily.App">
     <Application.Resources>
+        <ResourceDictionary>
 
+                <!-- Dark/Black Background -->
+                <Color x:Key="CardinalRedColor">#BA514B</Color>
+                <Color x:Key="CardinalRedDarkColor">#BA514B</Color>
+                <Color x:Key="CardinalRedLightColor">#7D4140</Color>
+                <Color x:Key="CardinalBackgroundColor">#404040</Color>
+                <Color x:Key="CardinalBackgroundLightColor">#343434</Color>
+
+                <!-- Lighter Grey/Tan Background -->
+                <!--<Color x:Key="CardinalRedColor">#CC0000</Color>
+                <Color x:Key="CardinalRedDarkColor">#930000</Color>
+                <Color x:Key="CardinalRedLightColor">#FF4F30</Color>
+                <Color x:Key="CardinalBackgroundColor">#E1E2E1</Color>
+                <Color x:Key="CardinalBackgroundLightColor">#F5F5F6</Color>-->
+
+                <Color x:Key="TransparentColor">#FFFFFF00</Color>
+        </ResourceDictionary>
     </Application.Resources>
 </Application>

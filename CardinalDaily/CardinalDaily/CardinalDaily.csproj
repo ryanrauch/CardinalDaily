@@ -20,4 +20,9 @@
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
   </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Views\ContentViews\" />
+    <Folder Include="Models\" />
+    <Folder Include="Controls\" />
+  </ItemGroup>
 </Project>

@@ -15,6 +15,7 @@ namespace CardinalDaily
         {
             var containerBuilder = new ContainerBuilder();
             containerBuilder.RegisterType<InitialViewModel>().SingleInstance();
+            //containerBuilder.RegisterType<WeekViewModel>();
             //containerBuilder.RegisterType<LoginViewModel>().SingleInstance();
             //containerBuilder.RegisterType<InventoryViewModel>().SingleInstance();
             //containerBuilder.RegisterType<InventoryCompletedViewModel>().SingleInstance();

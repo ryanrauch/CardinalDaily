@@ -1,13 +1,39 @@
-﻿<?xml version="1.0" encoding="utf-8" ?>
+<?xml version="1.0" encoding="utf-8" ?>
 <local:InitialViewBase xmlns="http://xamarin.com/schemas/2014/forms"
                        xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
                        xmlns:local="clr-namespace:CardinalDaily.Views.ContentPages"
+                       xmlns:contentViews="clr-namespace:CardinalDaily.Views.ContentViews"
+                       xmlns:controls="clr-namespace:CardinalDaily.Controls"
+                       x:Name="InitialViewName"
                        x:Class="CardinalDaily.Views.ContentPages.InitialView">
     <ContentPage.Content>
-        <StackLayout>
-            <Label Text="Welcome to Xamarin.Forms!"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
-        </StackLayout>
+        <ScrollView>
+            <controls:WrapLayout ItemsSource="{Binding YearCalendarTest}"
+                         ColumnSpacing="10"
+                         RowSpacing="10">
+                <controls:WrapLayout.ItemTemplate>
+                    <DataTemplate>
+                        <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="*"/>
+                                <RowDefinition Height="*"/>
+                                <RowDefinition Height="*"/>
+                                <RowDefinition Height="*"/>
+                                <RowDefinition Height="*"/>
+                                <RowDefinition Height="*"/>
+                                <RowDefinition Height="*"/>                
+                            </Grid.RowDefinitions>
+                            <Label Grid.Row="0" Text="{Binding Sunday.Value}"/>
+                            <Label Grid.Row="1" Text="{Binding Monday.Value}"/>
+                            <Label Grid.Row="2" Text="{Binding Tuesday.Value}"/>
+                            <Label Grid.Row="3" Text="{Binding Wednesday.Value}"/>
+                            <Label Grid.Row="4" Text="{Binding Thursday.Value}"/>
+                            <Label Grid.Row="5" Text="{Binding Friday.Value}"/>
+                            <Label Grid.Row="6" Text="{Binding Saturday.Value}"/>
+                        </Grid>
+                    </DataTemplate>
+                </controls:WrapLayout.ItemTemplate>
+            </controls:WrapLayout>
+        </ScrollView>
     </ContentPage.Content>
 </local:InitialViewBase>
